@@ -47,12 +47,12 @@ export const ImageCanvas = ({ imageUrl, imageType = 'full', onReset }: ImageCanv
 
   return (
     <div className="fixed inset-0 bg-background">
-      <div className="absolute top-100 right-18 z-50 flex gap-2">
-        <Button onClick={() => setIsFormVisible(!isFormVisible)} variant="secondary" size="sm">
-          <Settings className="w-4 h-4" />
+      <div className={`absolute z-50 flex flex-col gap-1 ${imageType === 'cropped' ? 'top-4 right-4' : 'top-100 right-18'}`}>
+        <Button onClick={() => setIsFormVisible(!isFormVisible)} variant="secondary" size="icon">
+          <Settings className="w-3 h-3" />
         </Button>
-        <Button onClick={onReset} variant="secondary" size="sm">
-          <Upload className="w-4 h-4" />
+        <Button onClick={onReset} variant="secondary" size="icon">
+          <Upload className="w-3 h-3" />
         </Button>
       </div>
 
